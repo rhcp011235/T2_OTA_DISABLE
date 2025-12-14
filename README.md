@@ -1,6 +1,20 @@
 # Disable_OTA_MACOS
 
+Special thanks to @int1h for the help to get this properly reversed. 
+
 A small, root-only Bash utility that disables and re-enables macOS software update (OTA) behavior by writing preference keys, clearing update caches, and stopping the `softwareupdated` LaunchDaemon.
+
+I have also included a Objective C version:
+
+```
+clang -arch x86_64 \
+  -fobjc-arc \
+  -x objective-c++ disota2.mm \
+  -framework Foundation \
+  -framework CoreFoundation \
+  -lc++ \
+  -o Disable_OTA_MACOS
+```
 
 This project is intentionally minimal. It exists to do one job reliably and be easy to audit.
 
